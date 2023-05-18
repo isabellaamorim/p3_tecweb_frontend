@@ -5,10 +5,16 @@ import { useEffect, useState } from 'react';
 function Question(props){
 
   var ops = props.incorretas;
-  console.log(ops);
+  console.log(props.children);
   ops.push(props.children);
   ops.sort();
   console.log(ops);
+
+  function checkAnswer(event){
+    if (event.target.value === props.children){
+      props.setScore(props.score + 1);
+    }
+  }
 
   return (
     <div className="question">
@@ -16,7 +22,7 @@ function Question(props){
       <div className = "place-content">
         <form className="form-card" onSubmit={props.respondendo}> 
           {ops.map((op, index) => (
-            <button className="op" key={index}>{op}</button>
+            <button className="op" key={index} onClick={checkAnswer} value={op}>{op}</button>
           ))}
         </form>
       </div>
@@ -31,6 +37,8 @@ function App() {
   const [question, setQuestion] = useState({});
 
   const [j, setI] = useState(0);
+
+  const [score, setScore] = useState(0);
 
   const options = {
     method: 'GET',
@@ -50,17 +58,11 @@ function App() {
       setI(j + 1);
     }}, [questions]);
 
-  // useEffect(() => {
-  //   setQuestion(questions[i]);}, [i]);
-
   const respondendo = (event) => {
     event.preventDefault();
     setQuestion(questions[j]);
     setI(j + 1);
-    console.log(j);
   };
-
-  console.log(question);
 
   return (
     <div className="App">
@@ -75,10 +77,14 @@ function App() {
 
         <div className = "block_card">
         {(JSON.stringify(question) !== JSON.stringify({})) &&
-          <Question id={question.id} respondendo = {respondendo} question={question.question.text} incorretas={question.incorrectAnswers}>{question.correctAnswer}</Question>
+          <Question id={question.id} score = {score} setScore = {setScore} respondendo = {respondendo} question={question.question.text} incorretas={question.incorrectAnswers}>{question.correctAnswer}</Question>
         }
         </div>
 
+        <div className="score">
+          <h3 className="score-title">Score</h3>
+          <h3 className="score-number">{score}</h3>
+        </div>
       </main>
     </div>
   );
