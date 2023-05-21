@@ -1,6 +1,8 @@
 import './App.css';
 import axios from "axios";
 import { useEffect, useState } from 'react';
+import Life from './component_life/Life.js';
+
 
 function Question(props){
 
@@ -14,6 +16,10 @@ function Question(props){
     if (event.target.value === props.children){
       props.setScore(props.score + 1);
     }
+    else{
+      props.setHeart(props.Heart +1);
+    }
+
   }
 
   return (
@@ -30,6 +36,8 @@ function Question(props){
   );
 }
 
+
+
 function App() {
 
   const [questions, setQuestions] = useState([]);
@@ -39,6 +47,8 @@ function App() {
   const [j, setI] = useState(0);
 
   const [score, setScore] = useState(0);
+
+  const [Heart, setHeart] = useState(1);
 
   const options = {
     method: 'GET',
@@ -65,11 +75,13 @@ function App() {
   };
 
   return (
+    <div>
+      <Life Heart = {Heart} setHeart = {setHeart}/>
     <div className="App">
       <div className="appbar">
             <h1 className="title">Trivia Quiz</h1>
       </div>
-
+      
       <main className="container">
         <form className="form-card" onSubmit={buscaQuestions}>
           <button className="Iniciar" type = 'submit'>Iniciar</button>
@@ -86,6 +98,7 @@ function App() {
           <h3 className="score-number">{score}</h3>
         </div>
       </main>
+    </div>
     </div>
   );
 }
