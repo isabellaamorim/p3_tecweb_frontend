@@ -1,12 +1,12 @@
 .btn2{
-
-    color: rgb(29, 29, 32);
-    background: rgb(166, 248, 234);
-    font-size: 20px;
-    font-family: serif;
+    
     position: absolute;
     top: 5px;
-    right: 10px;	
+    right: 5px;	
+    max-width:60px;
+    max-height:20px;
+    width: auto;
+    height: auto;
     padding-bottom: 10px;
   }
 

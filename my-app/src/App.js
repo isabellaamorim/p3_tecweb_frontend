@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Life from './component_life/Life.js';
 
 
+
 function Question(props){
 
   var ops = props.incorretas;
@@ -13,10 +14,12 @@ function Question(props){
   console.log(ops);
 
   function checkAnswer(event){
+    let beat = new Audio('erro.mp3');
     if (event.target.value === props.children){
       props.setScore(props.score + 1);
     }
     else{
+      beat.play();
       props.setHeart(props.Heart +1);
     }
 
@@ -49,6 +52,8 @@ function App() {
   const [score, setScore] = useState(0);
 
   const [Heart, setHeart] = useState(1);
+
+  
 
   const options = {
     method: 'GET',
@@ -89,7 +94,15 @@ function App() {
 
         <div className = "block_card">
         {(JSON.stringify(question) !== JSON.stringify({})) &&
-          <Question id={question.id} score = {score} setScore = {setScore} respondendo = {respondendo} question={question.question.text} incorretas={question.incorrectAnswers}>{question.correctAnswer}</Question>
+          <Question id={question.id} 
+          score = {score} 
+          setScore = {setScore} 
+          respondendo = {respondendo} 
+          question={question.question.text}
+          Heart = {Heart} 
+          setHeart = {setHeart} 
+          incorretas={question.incorrectAnswers}>{question.correctAnswer} 
+          </Question>
         }
         </div>
 

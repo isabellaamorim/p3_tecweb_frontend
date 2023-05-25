@@ -1,36 +1,41 @@
 import React from "react";
 import './index.css';
 
+
 export default function Life(props){
-  
-    if(props.Heart == 1){
+
+    /*const [Heart, setHeart] = useState(1);*/
+    
+    
+    if(props.Heart === 1){
+       
         return (
-            <div className="btn2">
-                <img src='C:\Users\dilob\Desktop\4_semestre\tecweb\p3\imagens\life_1.jpeg'/>
-            </div>
+            
+            <img className="btn2" src='life_1.jpeg' alt="heart"/>
+         
         )
     }
     
-    else if (props.Heart == 2){
+    else if (props.Heart === 2){
+        
+        
         return (
-            <div className="btn2">
-                <img src='C:\Users\dilob\Desktop\4_semestre\tecweb\p3\imagens\life_2.jpeg'/>
-            </div>
+            <img className="btn2" src='life_2.jpeg' alt="heart"/>
         )
     }
     
-    else if (props.Heart == 3){
+    else if (props.Heart === 3){
+
         return (
-            <div className="btn2">
-                <img src='C:\Users\dilob\Desktop\4_semestre\tecweb\p3\imagens\life_3.jpeg'/>
-            </div>
+            <img className="btn2" src='life_3.jpeg' alt="heart"/>
         )
     }
     
-    else if (props.Heart == 4){
+    else if (props.Heart === 4){
+        
         return (
             <div className="popup">
-                <img src='C:\Users\dilob\Desktop\4_semestre\tecweb\p3\imagens\life_4.jpeg'/>
+                 <img className="btn2" src='life_4.jpeg' alt="heart"/>
                 <p>You Sucks</p>
             </div>
         )
