@@ -11,13 +11,21 @@
   }
 
   .popup{
+    text-align: center;
     position:  fixed;
     top: 0; bottom: 0;
     left: 0; right: 0;
     margin: auto;
-    width: 400px;
-    height: 200px;
+    width: 95%;
+    height: 90%;
     padding: 25px;
     border: solid 2px #fa0000;
-    background: #ee676767;
+    background: #cf2f2fbe;
+  }
+  
+  .popup_title {
+    padding-top: 5%;
+    font-size: 150px;
+    font-weight: bold;
+    margin: 10px;
   }

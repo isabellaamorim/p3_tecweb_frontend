@@ -36,7 +36,11 @@ export default function Life(props){
         return (
             <div className="popup">
                  <img className="btn2" src='life_4.jpeg' alt="heart"/>
-                <p>You Sucks</p>
+                 <div className="popup_title"> 
+                    <p>GAME OVER</p>
+                 </div>
+                
+
             </div>
         )
     }
