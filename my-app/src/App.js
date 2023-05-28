@@ -3,8 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from 'react';
 import Life from './component_life/Life.js';
 
-
-
 function Question(props){
 
   var ops = props.incorretas;
@@ -22,11 +20,11 @@ function Question(props){
       beat.play();
       props.setHeart(props.Heart +1);
     }
-
   }
 
   return (
     <div className="question">
+      <div id = "k">
       <h3 className="question-title">{props.question}</h3>
       <div className = "place-content">
         <form className="form-card" onSubmit={props.respondendo}> 
@@ -35,11 +33,10 @@ function Question(props){
           ))}
         </form>
       </div>
+      </div>
     </div>
   );
 }
-
-
 
 function App() {
 
@@ -88,8 +85,13 @@ function App() {
       </div>
       
       <main className="container">
-        <form className="form-card" onSubmit={buscaQuestions}>
-          <button className="Iniciar" type = 'submit'>Iniciar</button>
+      <form className="form-card" onSubmit={buscaQuestions}>
+          <div id="Iniciar">
+            <h2>Seja bem-vindo</h2>
+            <p>Clique no botão abaixo para começar:</p>
+            <button type = 'submit'>Iniciar</button>
+            <img src='quiz.svg' alt="Início do Quiz" />
+          </div>
         </form>
 
         <div className = "block_card">

@@ -1,11 +1,11 @@
 import React from "react";
-import './index.css';
+import './Life.css';
 
 
 export default function Life(props){
 
     /*const [Heart, setHeart] = useState(1);*/
-    
+
     
     if(props.Heart === 1){
        
@@ -32,15 +32,15 @@ export default function Life(props){
     }
     
     else if (props.Heart === 4){
-        
+
         return (
             <div className="popup">
                  <img className="btn2" src='life_4.jpeg' alt="heart"/>
                  <div className="popup_title"> 
                     <p>GAME OVER</p>
+                    <button type="button" onClick={() => { window.location.reload(true);}}>Jogar Novamente!</button>
                  </div>
                 
-
             </div>
         )
     }

@@ -1,0 +1,31 @@
+.btn2{
+    
+  position: absolute;
+  top: 5px;
+  right: 5px;	
+  max-width:60px;
+  max-height:20px;
+  width: auto;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+.popup{
+  text-align: center;
+  position:  fixed;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  margin: auto;
+  width: 93%;
+  height: 86%;
+  padding: 50px;
+  border: solid 2px #3c0e70;
+  background: #8435de;
+}
+
+.popup_title {
+  padding-top: 15%;
+  font-size: 150px;
+  font-weight: bold;
+  margin: 10px;
+}
