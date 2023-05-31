@@ -1,9 +1,12 @@
-## Projeto 3 de Tecweb!
+# Projeto 3 de Tecweb!
 
-# Rascunho da tela
+## Vídeo DEMO
+[DEMO](https://youtu.be/F2zpYfnmuBs)
+
+## Rascunho da tela
 [rascunho_p3](https://github.com/isabellaamorim/p3_tecweb_frontend/assets/92479095/6b233faa-8599-4fa4-8af4-c4c4d74751ae)
 
-# TASKLIST
+## TASKLIST
 
 Sprint 1
 - [x] Esqueleto em react pronto
